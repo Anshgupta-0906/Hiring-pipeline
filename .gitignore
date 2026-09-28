@@ -1,0 +1,14 @@
+# Local database (contains your candidate data - don't commit it)
+pipeline.db
+
+# Python
+__pycache__/
+*.pyc
+venv/
+.venv/
+
+# Secrets / editor files
+.env
+.DS_Store
+.idea/
+.vscode/

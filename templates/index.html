@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Docket — Hiring Pipeline</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <h1>The Docket</h1>
+    <p class="tagline">One requisition. Every candidate's case, in order.</p>
+  </div>
+  <button class="btn-add" id="openAddBtn">+ New candidate</button>
+</header>
+
+<section class="search-wrap">
+  <div class="search-box">
+    <input type="text" id="searchInput" placeholder="Try: sharam &nbsp;·&nbsp; who's in interview &nbsp;·&nbsp; stuck in screening for more than a week">
+    <button id="clearSearch" class="clear-btn" hidden>&times;</button>
+  </div>
+  <label id="aiToggleWrap" class="ai-toggle" hidden>
+    <input type="checkbox" id="aiToggle">
+    <span>✨ Ask AI to interpret this query</span>
+  </label>
+  <div id="searchFeedback" class="search-feedback" hidden></div>
+</section>
+
+<main id="board" class="board">
+  <!-- stage columns injected by app.js -->
+</main>
+
+<aside id="rejectedTray" class="rejected-tray">
+  <button id="toggleRejected" class="rejected-toggle">Rejected <span id="rejectedCount">(0)</span> ▾</button>
+  <div id="rejectedList" class="rejected-list" hidden></div>
+</aside>
+
+<!-- Add candidate modal -->
+<div id="addModal" class="modal-backdrop" hidden>
+  <div class="modal">
+    <h2>Log a new candidate</h2>
+    <p class="modal-sub">They'll enter the docket at the Applied stage.</p>
+    <input type="text" id="newCandidateName" placeholder="Full name">
+    <div class="modal-actions">
+      <button id="cancelAdd" class="btn-ghost">Cancel</button>
+      <button id="confirmAdd" class="btn-primary">Add to pipeline</button>
+    </div>
+    <p id="addError" class="form-error" hidden></p>
+  </div>
+</div>
+
+<!-- Candidate detail modal -->
+<div id="detailModal" class="modal-backdrop" hidden>
+  <div class="modal modal-wide">
+    <div class="modal-header">
+      <div>
+        <h2 id="detailName">—</h2>
+        <p class="modal-sub" id="detailStageInfo">—</p>
+      </div>
+      <button class="modal-close" id="closeDetail">&times;</button>
+    </div>
+
+    <div class="detail-actions" id="detailActions"></div>
+    <p id="detailError" class="form-error" hidden></p>
+
+    <h3 class="history-heading">Case history</h3>
+    <ol class="history-list" id="historyList"></ol>
+  </div>
+</div>
+
+<script src="/static/app.js"></script>
+</body>
+</html>
