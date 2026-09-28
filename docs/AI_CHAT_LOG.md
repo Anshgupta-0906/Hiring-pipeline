@@ -17,7 +17,7 @@ Give me ideas to implement this search functionality
 
 **AI:** The event-log data model, plus a regex clause parser combined with difflib fuzzy matching, and honest error messages.
 
-**What I Implemented:**I implemented the event-log data model, plus a regex clause parser combined with difflib fuzzy matching, and honest error messages.
+**What I Implemented:** I implemented the event-log data model, plus a regex clause parser combined with difflib fuzzy matching, and honest error messages.
 
 The trade-offs I accepted:
 
@@ -31,7 +31,7 @@ Every new question type needs a new pattern.
 **AI:** Recognised the cause: Python older than 3.7 lacks
 `datetime.fromisoformat`.
 
-**What I Implemented:**Added `pipeline/timeutil.py` with a hand-written
+**What I Implemented:** Added `pipeline/timeutil.py` with a hand-written
 ISO parser and replaced every use.
 
 ### 3. AI-assisted search
@@ -42,7 +42,7 @@ understand what we are asking and access the database to give the correct result
 run SQL, it proposed having the model return a structured filter that Python
 validates and executes with the existing code. 
 
-**What I Implemented:**Built `ai_search.py`, a shared
+**What I Implemented:** Built `ai_search.py`, a shared
 `_execute()` used by both parsers, a `smart_search()` fallback, an
 `/api/ai-status` endpoint and an opt-in checkbox. Tested request plumbing
 against the real API with a fake key (clean 401 -> fallback) and unit-tested
